@@ -1,0 +1,40 @@
+
+
+1# training first
+
+yolo task=detect mode=train model=yolov8n.pt data=data.yaml epochs=250 imgsz=640
+
+2# predicting second to check
+
+yolo task=detect mode=predict model=/home/emad/projects/INTERSHIP/development/Human_IMX636/runs/detect/500_epoches/weights/best.pt source=/home/emad/projects/INTERSHIP/development/Human_IMX636/Predict/
+
+
+3# testing last to evaluate
+
+yolo task=detect mode=val model=/home/emad/projects/INTERSHIP/development/Human_IMX636/runs/detect/train6/weights/best.pt data=data.yaml split=test
+
+4# Access lableIMG
+cd ~/projects/INTERSHIP/labelImg
+
+
+
+  python3 labelImg.py \
+  /home/emad/projects/INTERSHIP/development/Human_IMX636/annotation/image_for_labeling \
+  /home/emad/projects/INTERSHIP/development/Human_IMX636/annotation/image_for_labeling/classes.txt
+
+  
+
+
+
+
+
+--------------------
+
+#Raw to h5
+
+python3 /usr/share/metavision/sdk/ml/python_samples/generate_hdf5/generate_hdf5.py \
+    --input-raw /path/to/your_file.raw \
+    --output-folder /path/to/output_dir \
+    --delta-t 50000  # microseconds (e.g., 50ms)
+
+

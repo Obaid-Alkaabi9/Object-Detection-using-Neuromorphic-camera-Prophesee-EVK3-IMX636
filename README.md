@@ -96,5 +96,9 @@ python3 final_stream.py
 
 - You may need to adjust parameters such as delta-t or YOLO image size based on your application.
 
+- Refer the "sample_output.mp4" for the sample output.
 
+## 🎬 Sample Output
+
+![Sample Output](sample_output.gif)
 

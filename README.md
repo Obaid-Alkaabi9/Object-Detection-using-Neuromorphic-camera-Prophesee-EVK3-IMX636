@@ -20,8 +20,48 @@ This project demonstrates how to use a **Neuromorphic (event-based) camera** to 
 - Download and install the **Metavision SDK**:  
   [Metavision SDK Installation Guide](https://docs.prophesee.ai/stable/installation/index.html)
 
+- 🔻 **Direct SDK Download (v4.6 Free)**:  
+  You can download the **free SDK v4.6** from this link:  
+  [Prophesee SDK Download](https://www.prophesee.ai/metavision-intelligence-sdk-download/)  
+  > If you have access to the **full version**, it is also compatible.
+
+**Follow these steps to install free Metavision SDK** and test your neuromorphic camera using terminal and Python:
+
+Step 1: Add SDK Repository
+Download metavision.list and move it to the APT sources list:
+
+```bash
+sudo mv ~/Downloads/metavision.list /etc/apt/sources.list.d/
+```
+Step 2: Update Package List:
+
+```bash
+sudo apt update
+```
+Step 3: Install Metavision SDK:
+
+```bash
+sudo apt install metavision-sdk
+```
+Step 4: Test the Camera Using GUI Tool
+Launch Metavision Player:
+```bash
+metavision_player
+```
+>This will open a GUI showing the live event stream from the connected camera.
+
+Step 5: Test the SDK Using Python
+Run the following one-liner to confirm the SDK is installed:
+```bash
+python3 -c "from metavision_core.event_io import EventsIterator; print('✅ Installed')"
+```
+>If you see ✅ Installed, the SDK and Python bindings are working correctly.
+
+
 - Download and install **Metavision Studio** software:  
   [Metavision Studio Guide](https://docs.prophesee.ai/stable/metavision_studio/)
+
+
 
 ---
 
